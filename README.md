@@ -64,3 +64,35 @@ docker pull redis
 ```
 docker run --name redis -d -p 6379:6379 redis --requirepass "123456-abc"
 ```
+
+# 3、Docker pull网络错误解决
+```
+[root@localhost chenhu]# dig @114.114.114.114 registry-1.docker.io
+; <<>> DiG 9.9.4-RedHat-9.9.4-72.el7 <<>> @114.114.114.114 registry-1.docker.io
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10006
+;; flags: qr rd ra; QUERY: 1, ANSWER: 8, AUTHORITY: 0, ADDITIONAL: 1
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;registry-1.docker.io.          IN      A
+;; ANSWER SECTION:
+registry-1.docker.io.   39      IN      A       34.201.196.144
+registry-1.docker.io.   39      IN      A       34.197.189.129
+registry-1.docker.io.   39      IN      A       3.224.11.4
+registry-1.docker.io.   39      IN      A       3.221.133.86
+registry-1.docker.io.   39      IN      A       34.192.182.239
+registry-1.docker.io.   39      IN      A       34.228.211.243
+registry-1.docker.io.   39      IN      A       34.199.40.84
+registry-1.docker.io.   39      IN      A       34.199.77.19
+;; Query time: 38 msec
+;; SERVER: 114.114.114.114#53(114.114.114.114)
+;; WHEN: Wed Sep 11 03:47:59 PDT 2019
+;; MSG SIZE  rcvd: 177
+```
+然后添加下面这条host
+```
+34.199.77.19 registry-1.docker.io
+```
