@@ -53,3 +53,14 @@ $ docker run --name mysql \
  ```
  docker logs -f mysql
  ```
+
+# 2、安装Redis
+## 下载镜像
+```
+docker pull redis
+```
+
+## 启动
+```
+docker run --name redis -d -p 6379:6379 redis --requirepass "123456-abc"
+```
