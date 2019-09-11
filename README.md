@@ -1,12 +1,12 @@
 # docker-learning-notes
 
 # 1、安装MySQL
-* 下载镜像
+## 下载镜像
 ```
 docker pull mysql:5.6
 ```
 
-* 配置文件
+## 配置文件
 ```
 mkdir -p /opt/docker-mysql/conf.d
 ```
@@ -26,7 +26,7 @@ log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
 
-* 启动
+## 启动
 
 增加数据文件夹
 ```
@@ -43,7 +43,7 @@ $ docker run --name mysql \
     -e MYSQL_ROOT_PASSWORD=123456-abc \
     -d mysql:5.6
  ```
- * 常用命令
+## 常用命令
  
  进入容器
  ```
