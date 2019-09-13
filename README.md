@@ -101,6 +101,7 @@ registry-1.docker.io.   39      IN      A       34.199.77.19
 ```
 docker pull nginx
 ```
-docker run -p 80:80 --name nginx -d nginx
+
 ```
+docker run -p 80:80 --name nginx -d nginx
 ```
