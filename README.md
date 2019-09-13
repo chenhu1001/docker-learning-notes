@@ -96,3 +96,11 @@ registry-1.docker.io.   39      IN      A       34.199.77.19
 ```
 34.199.77.19 registry-1.docker.io
 ```
+
+# 4、安装Nginx
+```
+docker pull nginx
+```
+docker run -p 80:80 --name nginx -d nginx
+```
+```
