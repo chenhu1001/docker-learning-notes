@@ -105,3 +105,21 @@ docker pull nginx
 ```
 docker run -p 80:80 --name nginx -d nginx
 ```
+
+# 5、CentOS7安装Docker
+```
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+yum-config-manager --enable docker-ce-test
+yum-config-manager --disable docker-ce-edge
+yum install docker-ce
+```
+
+# 6、Docker-Compose安装
+
+```
+curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+# 可能需要赋予执行权限(755,777,等按需自行填写)
+chmod 755 /usr/local/bin/docker-compose
+```
