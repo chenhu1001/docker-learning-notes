@@ -123,3 +123,6 @@ curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compos
 # 可能需要赋予执行权限(755,777,等按需自行填写)
 chmod 755 /usr/local/bin/docker-compose
 ```
+
+# 7、docker~使用阿里加速器
+https://yq.aliyun.com/articles/325299
