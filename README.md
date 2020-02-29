@@ -1,6 +1,7 @@
 # docker-learning-notes
 
 # 常用命令
+```
 // 安装docker
 curl -fsSL https://get.docker.com -o get-docker.sh  && \
  bash get-docker.sh
@@ -21,13 +22,13 @@ docker start myNginx
 docker exec -it containerId bash
 
 Dockerfile
-# 从哪里下载镜像
+// 从哪里下载镜像
 FROM nginx
-# 执行构建时的指令
+// 执行构建时的指令
 RUN echo '<h1>chenhu</h1>' > /usr/share/nginx/html/index.html
 
 docker build -t clangnginx:1.0 -f Dockfile .
-
+```
 # 1、安装MySQL
 ## 下载镜像
 ```
