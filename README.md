@@ -239,3 +239,33 @@ docker pull jaspeen/oracle-11g
 ```
 docker run --privileged --name oracle11g -p 1521:1521 -v /install/database:/install jaspeen/oracle-11g
 ```
+其他的错误如果没有自动跳出docker的run启动过程, 就不用管, 这个过程有点慢  
+进入oracle11g容器
+```
+docker exec -it oracle11g /bin/bash
+```
+切换到image的oracle用户
+```
+su - oracle
+```
+进入oracle数据库
+```
+sqlplus / as sysdba
+```
+解锁scott用户
+```
+SQL> alter user scott account unlock;
+User altered.
+SQL> commit;
+Commit complete.
+SQL> conn scott/tiger
+ERROR:
+ORA-28001: the password has expired
+Changing password for scott
+New password:
+Retype new password:
+Password changed
+Connected.
+SQL> 
+```
+即可通过数据库管理工具连接oracle数据库
