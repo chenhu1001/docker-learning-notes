@@ -215,3 +215,27 @@ chmod 755 /usr/local/bin/docker-compose
 
 # 7、docker~使用阿里加速器
 https://yq.aliyun.com/articles/325299
+
+# 8、安装oracle
+选择的docker镜像其实是一个"自动配置安装"oracle 11g的镜像, 所以你需要自己下载oracle 11g的安装包.
+```
+wget http://mirror.xrk.org/oracle/linux/linux.x64_11gR2_database_1of2.zip
+wget http://mirror.xrk.org/oracle/linux/linux.x64_11gR2_database_2of2.zip
+```
+创建一个目录
+```
+mkdir -p /install/database
+```
+将下载的oracle安装压缩文件解压到/install/database
+```
+unzip linux.x64_11gR2_database_1of2.zip -d /install/database
+unzip linux.x64_11gR2_database_2of2.zip -d /install/database
+```
+拉取镜像
+```
+docker pull jaspeen/oracle-11g
+```
+运行容器
+```
+docker run --privileged --name oracle11g -p 1521:1521 -v /install/database:/install jaspeen/oracle-11g
+```
