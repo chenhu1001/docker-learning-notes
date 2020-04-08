@@ -21,6 +21,9 @@ docker start myNginx
 // 进入容器
 docker exec -it containerId bash
 
+// 删除镜像
+docker rmi ed9c93747fe1
+
 Dockerfile
 // 从哪里下载镜像
 FROM nginx
