@@ -4,13 +4,7 @@ metadata目录在 docker info查看
 ```
 ```
 service docker stop
-```
-```
 thin_check /var/lib/docker/devicemapper/devicemapper/metadata
-```
-```
 thin_check --clear-needs-check-flag /var/lib/docker/devicemapper/devicemapper/metadata
-```
-```
 service docker start
 ```
