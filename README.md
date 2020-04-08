@@ -269,3 +269,9 @@ Connected.
 SQL> 
 ```
 即可通过数据库管理工具连接oracle数据库
+
+## 9、Xfce安装
+```
+docker run -d -p 6080:6080 -e VNC_RESOLUTION=1920x1080 yangxuan8282/alpine-xfce4-novnc:amd64
+```
+完成后访问：http://ip:6080 默认的vnc密码是:alpinelinux
