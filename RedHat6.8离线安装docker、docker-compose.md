@@ -10,9 +10,9 @@
 为了方便部署多台，写成批量部署脚本，与所有下载文件放同一目录即可，运行脚本需先赋予可执行权限chmod +x docker-setup。所有安装文件和脚本在附件中docker.rar中。  
 ## 六、在可以访问外网的服务器上，下载Docker镜像，通过镜像迁移的方式，使离线服务器获取Docker镜像
 ### 1、环境准备
-*服务器node01、node02
-*node01可以访问外网，node02不能访问外网，但node01与node02之间是互通的
-*node01和node02均已成功安装并启动Docker
+*服务器node01、node02  
+*node01可以访问外网，node02不能访问外网，但node01与node02之间是互通的  
+*node01和node02均已成功安装并启动Docker  
 ### 2、在node01上，从远程仓库获取oracle-12c镜像
 ```
 	[root@node01 ~]# docker pull sath89/oracle-12c
