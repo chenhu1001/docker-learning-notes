@@ -24,6 +24,10 @@ docker exec -it containerId bash
 // 删除镜像
 docker rmi ed9c93747fe1
 
+// 宿主机和容器文件相互复制
+docker cp  mytomcat:/usr/local/tomcat/conf/server.xml  server.xml
+docker cp  server.xml  mytomcat:/usr/local/tomcat/conf/server.xml  
+
 Dockerfile
 // 从哪里下载镜像
 FROM nginx
