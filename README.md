@@ -178,6 +178,17 @@ docker pull redis
 docker run --name redis -d -p 6379:6379 redis --requirepass "123456-abc"
 ```
 
+## 自定义配置文件
+```
+创建一个文件夹用来存放redis的配置文件、存储数据
+mkdir -p /usr/local/redis/conf /usr/local/redis/data
+```
+
+```
+执行命令
+docker run -p 6379:6379 -v /usr/local/redis/conf/redis.conf:/etc/redis/redis.conf -v /usr/local/redis/data:/data --name redis -d redis:6.2.4 redis-server /etc/redis/redis.conf
+```
+
 # 3、Docker pull网络错误解决
 ```
 [root@localhost chenhu]# dig @114.114.114.114 registry-1.docker.io
